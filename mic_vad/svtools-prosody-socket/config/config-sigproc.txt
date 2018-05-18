@@ -1,0 +1,46 @@
+# Configuration file for
+# signal processing parameters
+
+# power threshold (in dB) for formant extraction 
+# should be adjusted according to mic gain and level
+# -10000  ->  adaptive power threshold (using first intervals: 0.3 to 1 seconds), 
+#         but preferable to adjust fixed values for fixed environments
+# default = 0 dB
+[power threshold]
+30
+-12
+-10000
+20
+
+# f0 method
+# 0 -> ACF of LPC residual signal
+# 1 -> ACF of low frequency region (F1 band)
+# 3 -> ACF of mid frequency region (F3 band)
+# 6 -> SACF
+[f0 estimation]
+6
+
+
+# option for doing (1) or not (0) a double pre-emphasis in the input signal:
+# recommended for whispery/breathy voices
+[double pre-emphasis]
+0
+1
+
+# -1 -> default = 19 coefficients
+[lpc dimension]
+-1
+15
+
+# calculate sub-bands when loading parameters (necessary for fry detection)
+# 0 -> save time when loading parameters
+#[calc sub-bands]
+#0
+
+# parameter save format
+# 0 -> binary
+# 1 -> asc
+#[parameter format]
+#1
+
+

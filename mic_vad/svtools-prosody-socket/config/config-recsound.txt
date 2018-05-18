@@ -1,0 +1,129 @@
+# audio output configuration
+# fsync -> socket for sending audio data to remote ATRASR
+# wav -> socket for sending audio data to a remote player
+# raw -> socket for sending audio data to a remote player ?
+[output format]
+no
+wav
+[output host]
+localhost
+[output port]
+13000
+
+
+# audio input configuration
+# fsync -> socket for receiving audio data from a remote capture client (ATRASR format)
+# julius -> socket for receiving audio data from a remote capture server (Julius format)
+# mic -> capture audio data from local device (mic)
+# wav16 -> socket for receiving audio data from audio tracker (WAV16 format)
+[input format]
+mic
+wav
+[input host]
+127.0.0.1
+[input port]
+20096
+
+# capture device id (when [input format] is set to "mic")
+# -1 -> use windows default device
+[input device]
+-1
+# number of input channels: 2 for stereo!
+[input channels]
+1
+
+# input player
+# 1 -> play received input signal
+[input player]
+1
+# 10 for local audio server
+# 50 for remote wired audio server
+[input player delay]
+80
+[input player balance]
+0
+[input player gain]
+1
+
+# motion output configuration
+# robovie -> socket for sending head motion control parameters to a remote robot (robovie)
+# android -> socket for sending lip motion control parameters to a remote android 101 (HI1), 102 (F)
+# telenoid -> socket for sending lip motion control parameters to a remote telenoid 103
+# iwai -> socket for sending lip motion control parameters to a remote telenoid server using iwai's protocol
+# f0 -> socket for sending f0 and power to a remote motion generator
+# layer2 -> send prosodic and motion control parameters to a remote layer2 client
+[motion format]
+layer2
+[motion host]
+127.0.0.1
+[motion port]
+20097
+
+[motion delay]
+60
+100
+
+# 0 -> don't send idle motion
+# 1 -> send eye blinking idle motion
+[send idle motion]
+0
+
+
+# start time synchronization control
+# sync -> socket for receiving start/stop recording commands from a remote controller
+# no -> no synchronization
+[controller format]
+sync
+[controller host]
+localhost
+[controller port]
+20101
+
+# face motion input configuration
+# iwai -> socket for receiving face parameters from, and sending lip motion parameters to iwai's program
+[facetrack format]
+no
+iwai
+[facetrack host]
+no
+[facetrack port]
+30012
+
+
+[asr host]
+localhost
+
+[asr port]
+5530
+
+[asr format]
+no
+julius
+
+[process segment]
+0
+1
+
+# save configuration
+# no, fsync, wav, raw, txt
+[save audio format]
+wav
+[save audio dir]
+svtools_output\
+[save time interval ms]
+300000
+# each 5 minutes (300000)
+
+# save/compute parameters (feature extraction)
+# 0 -> don't save, don't compute (default)
+# 1 -> save, compute
+# -1 -> don't save, compute
+[save param]
+-1
+[save param dir]
+svtools_output\
+
+# debug file
+[debug]
+0
+1

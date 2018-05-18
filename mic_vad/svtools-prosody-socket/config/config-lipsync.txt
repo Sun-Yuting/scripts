@@ -1,0 +1,103 @@
+# Configuration file for lip motion generation parameters
+
+# center F0
+# 240 for female voices
+# 120 for male voices
+[center F0]
+120
+260
+
+# center vowel (schwa) F1
+# 480 Hz for male
+# 580 Hz for female
+# default = 480 Hz
+[center F1]
+480
+600
+
+# power threshold (in dB) for formant extraction 
+# should be adjusted according to mic gain and level
+# -1  ->  adaptive power threshold (using first intervals), 
+#         but preferable to adjust fixed values for fixed environments
+#[power threshold]
+#20
+#-1
+# this setting was moved to the config-sigproc.txt file
+
+
+# ---- parameters for sending commands to remote android/telenoid
+
+# jaw actuator number
+# -1 or not defined -> use default values
+# default = 6, for android
+# default = 4, for telenoid
+# 13 for ERICA
+[jaw actuator]
+13
+4
+-1
+
+# lip corner actuator number
+# -1 or not defined -> don't send lip corner command 
+# 7 for geminoidF
+# 9 for ERICA
+# 15,16 for HI2
+[lip corner actuator]
+-1
+9
+-1
+
+# -1 or not defined -> do not send lip protrusion command
+# 6 for HI2
+# 11 for ERICA
+[lip protrusion actuator]
+-1
+11
+
+# 12 for ERICA
+[tongue actuator]
+-1
+12
+
+[laugh length]
+1000
+
+# 0 ~ 255
+[idle smile degree]
+80
+
+# maximum lip height (scale)
+# 255 is the maximum value 
+# -1 or not defined -> use default values
+# default = 255, for android
+# default = 200, for telenoid (to avoid silicon tearing)
+[max lip height]
+255
+-1
+
+# default = -1 
+# 6 for telenoid
+# 15 for ERICA
+[head pitch actuator]
+15
+-1
+6
+
+# priority level for sending actuator commands to robot
+# -1 or not defined -> use default values
+# default = 5
+[priority]
+-1
+
+# time interval to keep the motion
+# -1 or not defined -> use default values
+# default = 50 ms, for android
+# default = 100 ms, for telenoid
+[keep time]
+-1
+
+# interval (in ms) to send commands to remote android/telenoid
+# should be as smaller as possible (10 ~ 30 ms)
+# default = 10 ms
+[sampling interval]
+20

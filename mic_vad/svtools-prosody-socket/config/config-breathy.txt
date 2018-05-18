@@ -1,0 +1,21 @@
+# Configuration file for
+# breathy detection parameters
+
+# ---- Breathy detection parameter settings
+
+# threshold for voicing 
+# default  = 0.5 (0-1)  1
+[F1F3syn threshold]
+0.6
+
+# weight for F1F3syn factor in breathpow computation
+# default = 0 (>0)
+[breathpow weight]
+4
+
+# threshold for breathpow (dB)
+# default = -40 dB  -100
+[breathpow threshold]
+-40
+-20
+-25

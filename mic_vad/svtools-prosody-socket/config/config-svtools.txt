@@ -1,0 +1,163 @@
+# Configuration file for
+# - panel display
+# - edition mode
+# - vocal fry detection parameters (should be in a separate file)
+
+
+# ---- Directory settings:
+
+# directory for saving and loading parameters
+# if paramdir is not defined, or the defined paramdir doesn't exist,
+# output files are saved in the same directory of the input wave file.
+[paramdir]
+c:/svtools/param/
+
+[tempdir]
+c:/svtools/temp/
+
+
+# ---- Spectrogram panel parameter settings:
+
+# spectral resolution: 1024
+[NFFTSpec]
+512
+# frame length: 32 ms -> 512 
+[NFrameSpec]
+512
+# frame shift: 2.5 ms -> 40;  5 ms -> 80; 10 ms -> 160
+[NFrameShiftSpec]
+160
+
+# ---- Panel configurations:
+
+# pitch panel
+[panel pitch]
+1
+# power panel
+[panel power]
+1
+# autocorrelation panel
+[panel autocorr]
+0
+# mel-cepstral spectrogram panel
+[panel mcepspec]
+0
+# spec panel
+[panel spec]
+1
+# masked spec panel
+[panel masked spec]
+0
+1
+# frame panels
+[panel frame]
+0
+1
+# lastsyll panel
+[panel lastsyll]
+0
+# formant panel
+[panel formant]
+0
+# load label list
+[label list]
+0
+# multi label mode
+[multi label mode]
+1
+0
+
+# number of points for edit panel height (100 - 2000)
+# default = 200
+[edit height]
+200
+150
+
+# number of points for edit text/label line height (10 - 100)
+# default = 25
+[text height]
+20
+
+# 0 -> single line for edit panel
+# 1 -> multiple lines for edit panel
+# N -> maximum N lines for edit panel
+[edit multiple lines]
+0
+2
+
+# number of points for edit label line width (10 -200)
+# default = 50
+[label width]
+80
+
+# number of points for spectrogram height (100 - 2000)
+# default = 200
+[spec height]
+100
+
+# panel time interval [seconds]
+# -1 -> whole signal
+# 0 -> 20 seconds (default)
+[panel time interval]
+-1
+
+# ---- Parameter configurations:
+
+# load parameters
+[load parameters]
+0
+1
+
+# calculate sub-bands when loading parameters (necessary for fry detection)
+# 0 -> save time when loading parameters
+[calc sub-bands]
+0
+
+# parameter save format
+# 0 -> binary
+# 1 -> asc
+[parameter format]
+0
+
+# --- Automatic function settings
+
+# auto hiragana (automatically input hiragana in the second text column, when Japanese is typed in the first text column)
+[auto hiragana]
+0
+
+# auto play (automatically play segment, when the cursor is up/down or when the selection bar is moved)
+[auto play]
+1
+
+# --- Player settings
+
+# 0 mono
+# 1 stereo
+[play channel mode]
+0
+1
+0
+
+# --- Initial view mode setting
+
+# 0 -> normal mode
+# 1 -> teleoperation view mode
+[teleop mode]
+1
+0
+
+# 0 -> upper and bottom views
+# 1 -> each freq bin (azimuth for different elevations)
+[soundloc view]
+0
+
+# --- Automatic start mode setting
+
+# 0 -> manual start mode
+# 1 -> online recsound (tele-operation mode)
+# 2 -> online sound localization mode
+# 3 -> online audio tracker mode
+[auto start mode]
+1
+0
+
